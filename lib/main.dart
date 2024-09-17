@@ -17,6 +17,7 @@ class _MyAppState extends State<MyApp> {
   final myController = TextEditingController();
   int? usdAmount;
   int afghani = 70;
+  String note = 'Current USD unit value';
 
 
   @override
@@ -39,10 +40,19 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                autofocus: true,
                 controller: myController,
+                cursorColor: Colors.grey.shade500,
+                autocorrect: true,
+                enableSuggestions: true,
+                autofocus: true,
                 decoration: const InputDecoration(
-                  labelText: 'Enter USD amount',
+                  focusedBorder:UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 0.5,
+                      color: Colors.blue,
+                  ),
+                  ),
+
                   focusColor: Colors.black26,
                   hintText: 'Enter amount of USD',
                   hintStyle: TextStyle(
@@ -65,6 +75,7 @@ class _MyAppState extends State<MyApp> {
                 onPressed: () {
                   setState(() {
                     afghani *= usdAmount!;
+                    note = 'Result';
                   });
                 },
                 child: Container(
@@ -79,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                       'Calculate ',
                       style: TextStyle(
                         backgroundColor: Colors.blue,
-                        fontSize: 18,
+                        fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
@@ -90,9 +101,9 @@ class _MyAppState extends State<MyApp> {
                 height: 12,
               ),
               Text(
-                'Result: $afghani',
+                '$note: $afghani',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 18,
                 ),
               ),
               SizedBox(height: 50),
@@ -108,6 +119,7 @@ class _MyAppState extends State<MyApp> {
                   onPressed: (){
                     setState(() {
                       afghani = 70;
+                      note = 'Current USD unit value';
                     });
 
                 },),
