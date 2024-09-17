@@ -42,7 +42,6 @@ class _MyAppState extends State<MyApp> {
               TextField(
                 controller: myController,
                 cursorColor: Colors.grey.shade500,
-                autocorrect: true,
                 enableSuggestions: true,
                 autofocus: true,
                 decoration: const InputDecoration(
@@ -52,7 +51,6 @@ class _MyAppState extends State<MyApp> {
                       color: Colors.blue,
                   ),
                   ),
-
                   focusColor: Colors.black26,
                   hintText: 'Enter amount of USD',
                   hintStyle: TextStyle(
@@ -101,7 +99,7 @@ class _MyAppState extends State<MyApp> {
                 height: 12,
               ),
               Text(
-                '$note: $afghani',
+                '$note: $afghani afs',
                 style: TextStyle(
                   fontSize: 18,
                 ),
